@@ -1,13 +1,13 @@
 def funnel_drop(values, drops, gates, figsize, linestyle, marker, markersize, color, ylabel, title, textsize, xsize, ysize, label, loc, legsize):
     """
-    This function takes in a series that contains counts or percentages of members
+    This function takes in a series that contains counts or percentages of users
     and plots a 2D plot that represents a funnel drop. The function assumes
     that pandas has been imported and that numbers are prepared either as whole
     numbers, decimals, or percentages. 
     
     INPUT:
     
-    values: pandas series of values that represent values of members at each gate
+    values: pandas series of values that represent values of users at each step
     drops: a list that represents what numbers should be displayed on the y-axis and in which intervals, e.g. [0, 20, 40, 60, 80, 100]
     gates; a list that represents the gates in the funnel, e.g. ['invite', 'confirmation']
     figsize: tuple that denotes figure size, e.g. (10, 5)
