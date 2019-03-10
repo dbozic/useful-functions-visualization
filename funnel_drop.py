@@ -9,7 +9,7 @@ def funnel_drop(values, drops, gates, figsize, linestyle, marker, markersize, co
     
     values: pandas series of values that represent values of users at each step
     drops: a list that represents what numbers should be displayed on the y-axis and in which intervals, e.g. [0, 20, 40, 60, 80, 100]
-    gates; a list that represents the gates in the funnel, e.g. ['invite', 'confirmation']
+    gates; a list that represents the gates in the funnel, e.g. ['click', 'open']
     figsize: tuple that denotes figure size, e.g. (10, 5)
     linestyle: string that denotes the style of line, e.g. '--'
     marker: string that denotes type of marker at each gate on the linechart, e.g. 'o'
