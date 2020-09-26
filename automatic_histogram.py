@@ -4,8 +4,7 @@ def automatic_histogram(series, figsize, color, edgecolor, title, xlabel, ylabel
   This function takes in a pandas series and plots an automatic histogram. The 
   key component of this functions is that it utilizes two functions to detect the
   appropriate number of bins and correct xticks spacing, which is often problematic
-  in matplotlib. The function assumes plotting from 0 as value, which can be adjusted
-  if necessary in the penultimate line. Assumes that identify_bin_count and 
+  in matplotlib. Assumes that identify_bin_count and 
   distribution_divisor_partition custom-made functions have been defined. 
     
   INPUT:
@@ -20,7 +19,6 @@ def automatic_histogram(series, figsize, color, edgecolor, title, xlabel, ylabel
   fontsize: int that denotes size of font used for the axes and plot title, e.g. 12
   xsize: int that denotes size of font used on x-axis, e.g. 12
   ysize: int that denotes size of font used on y-axis, e.g. 12
-
   OUTPUT:
     
   a plt plot
@@ -35,6 +33,10 @@ def automatic_histogram(series, figsize, color, edgecolor, title, xlabel, ylabel
   ax.set_title(title, weight = 'bold', fontsize = fontsize)
   ax.set_xlabel(xlabel, weight = 'bold', fontsize = fontsize)
   ax.set_ylabel(ylabel, weight = 'bold', fontsize = fontsize)
-  plt.xticks(range(0, int(np.max(series)), int(np.max(series) // identify_bin_count(distribution_divisor_partition(series)))), fontsize = xsize)
+  plt.xticks(range(
+    int(np.min(series)), 
+    int(np.max(series)) + (int(np.max(series)) - int(np.min(series))) // identify_bin_count(distribution_divisor_partition(series)),
+    (int(np.max(series)) - int(np.min(series))) // identify_bin_count(distribution_divisor_partition(series))), 
+    fontsize = xsize)
   plt.yticks(fontsize = ysize)
   plt.show()
