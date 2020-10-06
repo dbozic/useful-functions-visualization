@@ -1,5 +1,5 @@
 def relative_frequency_plot(data, group_class, grouped_variable, figsize, legend, color, title, fontsize, tickfontsize, weight,
-    xtitle, xfontsize, xweight, ytitle, yfontsize, yweight, xrotation, sort, top):
+    xtitle, xfontsize, xweight, ytitle, yfontsize, yweight, yticks, xrotation, sort, top):
       
     """
     This function takes in a pandas dataframe and plots a relative frequency
@@ -26,6 +26,7 @@ def relative_frequency_plot(data, group_class, grouped_variable, figsize, legend
     ytitle: string that denotes the y-axis label, e.g. '% of values'
     yfontsize: see fontsize, applied to y-axis
     yweight: see weight, applied to y-axis
+    yticks: manual setting of y-ticks, useful when comparing multiple charts, e.g. [0, 5, 10, 15, 20]
     xrotation: integer denoting the angle of rotation of x-ticks, e.g. 85
     sort: boolean denoting if the variable should be ordered by Descending frequency, e.g. True/False
     top: Use an integer if you want to plot only top X instances, e.g. 20 for top 20 instances. Use False if you want to plot everything.
@@ -64,3 +65,4 @@ def relative_frequency_plot(data, group_class, grouped_variable, figsize, legend
     ax.set_title(title, fontsize = fontsize, weight = weight)
     ax.set_xlabel(xtitle, fontsize = xfontsize, weight = xweight)
     ax.set_ylabel(ytitle, fontsize = yfontsize, weight = yweight)
+    ax.set_yticks(yticks)
