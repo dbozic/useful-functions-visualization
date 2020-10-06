@@ -1,5 +1,5 @@
 def plot_multiple_relative_frequency_plots(data, variables, grouped_variable, figsize, legend, color, title, fontsize, tickfontsize, weight,
-    xfontsize, xweight, ytitle, yfontsize, yweight, xrotation, sort, top):
+    xfontsize, xweight, ytitle, yfontsize, yweight, yticks, xrotation, sort, top):
   
  """
  This function uses the relative_frequency_plot and automates plotting of multiple charts
@@ -37,6 +37,7 @@ def plot_multiple_relative_frequency_plots(data, variables, grouped_variable, fi
     yweight = yweight, 
     xrotation = xrotation, 
     sort = sort, 
-    top = top
+    top = top,
+    yticks = yticks
     
   )
