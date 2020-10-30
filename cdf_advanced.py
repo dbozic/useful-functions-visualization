@@ -31,7 +31,7 @@ def cdf_advanced(array, figsize, majority_threshold, color, label, xlabel, ylabe
     x = np.sort(array)
     y = np.array(range(len(array)))/float(len(array))*100 
     ax.plot(x, y, color = color, label = label) # plot the CDF
-    plt.axvline(x = np.interp(majority_trehshold, y, x), color = 'grey', linestyle = '--') # vertical line at majority_threshold% completion
+    plt.axvline(x = np.interp(majority_threshold, y, x), color = 'grey', linestyle = '--') # vertical line at majority_threshold% completion
     ax.set_title(title, weight = 'bold', size = textsize)
     ax.set_xlabel(xlabel, weight = 'bold', size = textsize)
     ax.set_ylabel(ylabel, weight = 'bold', size = textsize)
