@@ -68,6 +68,5 @@ def relative_frequency_plot(data, group_class, grouped_variable, figsize, legend
     ax.set_yticks(yticks)
  
     # Annotate bar plots if necessary; if not, uncomment the following lines
-    
     for p in ax.patches:
       ax.annotate("%.2f" % p.get_height(), (p.get_x() + p.get_width() / 2., p.get_height()), ha='center', va='center', xytext=(0, 10), textcoords='offset points')
